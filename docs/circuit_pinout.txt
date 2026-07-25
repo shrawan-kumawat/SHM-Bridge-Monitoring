@@ -1,0 +1,67 @@
+============================================================
+ CIRCUIT WIRING REFERENCE
+ Structural Health Monitoring of Bridges
+============================================================
+
+ARDUINO UNO PIN ALLOCATION
+============================================================
+
+DIGITAL PINS:
+  D2  -> LCD D7
+  D3  -> LCD D6
+  D4  -> LCD D5
+  D5  -> LCD D4
+  D6  -> LED Green (via 220Ω resistor to GND)
+  D7  -> LED Yellow (via 220Ω resistor to GND)
+  D8  -> LED Red (via 220Ω resistor to GND)
+  D9  -> HC-SR04 TRIG
+  D10 -> HC-SR04 ECHO
+  D11 -> LCD Enable (EN)
+  D12 -> LCD Register Select (RS)
+  D13 -> DHT11 DATA (with 10KΩ pull-up to VCC)
+
+ANALOG PINS:
+  A0  -> Optical Fiber Sensor (Photodiode output)
+  A4  -> MPU6050 SDA (I2C Data)
+  A5  -> MPU6050 SCL (I2C Clock)
+
+POWER:
+  5V  -> MPU6050 VCC, HC-SR04 VCC, DHT11 VCC, LCD VDD
+  3.3V -> ESP8266 VCC, ESP8266 CH_PD
+  GND -> Common ground for all components
+
+============================================================
+
+ESP8266 CONNECTIONS:
+  RX  -> Arduino TX (via voltage divider: 1KΩ + 2KΩ for 5V->3.3V)
+  TX  -> Arduino RX
+  VCC -> 3.3V
+  GND -> GND
+  CH_PD (EN) -> 3.3V (10KΩ pull-up)
+  GPIO0 -> HIGH for normal operation, LOW for flash mode
+
+============================================================
+
+LCD 16x2 (HD44780):
+  VSS -> GND
+  VDD -> 5V
+  V0  -> Potentiometer middle pin (contrast)
+  RS  -> D12
+  RW  -> GND (write mode)
+  E   -> D11
+  D4  -> D5
+  D5  -> D4
+  D6  -> D3
+  D7  -> D2
+  LED+ (A) -> 5V (via 220Ω)
+  LED- (K) -> GND
+
+============================================================
+
+NOTES:
+- ESP8266 is 3.3V logic, Arduino is 5V. Use voltage divider on RX.
+- DHT11 requires 10KΩ pull-up resistor on data line.
+- All LEDs need 220Ω current limiting resistors.
+- Potentiometer (10KΩ) controls LCD contrast.
+- MPU6050 has internal pull-ups for I2C; external not needed.
+- HC-SR04 ECHO pin is 5V tolerant (direct connection OK).

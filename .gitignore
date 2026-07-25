@@ -1,0 +1,37 @@
+# -----------------------------
+# Arduino Build Files
+# -----------------------------
+*.hex
+*.elf
+*.bin
+*.eep
+*.map
+
+# Arduino IDE
+*.ino.cpp
+
+# Temporary files
+*.tmp
+*.log
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Backup files
+*~
+*.bak
+
+# PlatformIO
+.pio/
