@@ -527,10 +527,9 @@ See the [LICENSE](LICENSE) file for details.
 
 B.Tech in Electronics and Communication Engineering
 
-Central University of Jammu
 
 - GitHub: https://github.com/shrawan-kumawat
-- LinkedIn: *(www.linkedin.com/in/shrawankumawat)*
+- LinkedIn: *www.linkedin.com/in/shrawankumawat*
 
 ---
 
